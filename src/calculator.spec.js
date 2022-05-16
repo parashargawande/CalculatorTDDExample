@@ -24,4 +24,13 @@ describe('Calculator module', () => {
     it('should add two numbers',()=>{
         assert.equal(Calculator.add("1,2"),3)
     })
+
+    it('should handle new line as seperator and more than 2 nos',()=>{
+        expect(Calculator.add("1,2\n3")).to.be.equal(6)
+    })
+
+    //negative number returns error and show all of them in error
+    it('should throw error when negative nos are given',()=>{
+        expect(Calculator.add("1,2\n3\n-2")).to.throw(new Error())
+    })
 })
