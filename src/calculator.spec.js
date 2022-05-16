@@ -1,6 +1,7 @@
 'use strict'
 const Calculator = require('./calculator')
 const expect = require('chai').expect
+const assert = require('assert')
 
 // add function should exists and returns a number
 describe('Calculator module', () => {
@@ -16,11 +17,11 @@ describe('Calculator module', () => {
 
     //empty string return 0
     it('should return 0 for empty string',()=>{
-        expect(Calculator.add("")).to.be.equal(0)
+        assert.equal(Calculator.add(""),0)
     })
 
     //two number returns addition
     it('should add two numbers',()=>{
-        expect(Calculator.add("1,2")).to.be.equal(3)
+        assert.equal(Calculator.add("1,2"),3)
     })
 })
